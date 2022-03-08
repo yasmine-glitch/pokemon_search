@@ -8,9 +8,12 @@
       <li><strong> Name: </strong><%= @pokemon['name'].capitalize! %></li>
       <li><strong> Height: </strong><%= @pokemon['height'] %></li>
       <li><strong> Weight: </strong><%= @pokemon['weight'] %></li>
-      <li><strong> Abilities: </strong><%= @pokemon['abilities'][0]['ability']['name'] %>,<%= @pokemon['abilities'][1]['ability']['name'] %></li>
-      <li><strong> Best moves: </strong><%= @pokemon['moves'][0]['move']['name'].capitalize! %>,<%= @pokemon['moves'][1]['move']['name'].capitalize! %>,<%= @pokemon['moves'][2]['move']['name'].capitalize! %></li>
-      <li><strong> Held items: </strong><%= @pokemon['held_items'][0]['item']['name'].capitalize! %>,<%= @pokemon['held_items'][1]['item']['name'].capitalize! %></li>
+      <li><strong> Abilities: </strong><%= @pokemon['abilities'][0]['ability']['name'] %></li>
+      <%= @pokemon['abilities'].each do |ability| %>
+        <%= puts {ability[:name]} %>
+      <% end %>
+      <li><strong> Best moves: </strong><%= @pokemon['moves'].present? ? @pokemon['moves'][0]['move']['name'].capitalize! : nil %></li>
+      <li><strong> Held items: </strong><%= @pokemon['held_items'].present? ? @pokemon['held_items'][0]['item']['name'].capitalize! : nil %></li>
     </ul>
   </div>
 
@@ -29,3 +32,4 @@ Find your Pokemon !
   <% end %>
 
 </div>
+<% console %>
