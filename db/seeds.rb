@@ -9,4 +9,3 @@
 require 'poke-api-v2'
 
 PokeApi.get(pokemon: 'bulbasaur')
-
