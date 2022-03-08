@@ -1,3 +1,14 @@
-<h1>Pokemon search !</h1>
-<p>ici je crée la barre de recherche</p>
-
+<div>
+  <h1>Pokemon search!</h1>
+  <p>tape le nom d'un pokémon dans la barre de recherche</p>
+  <%= form_tag @pokemon_path, method: :get do %>
+    <div class="search-form-control form-control">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search a Pokémon"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat" %>
+    </div>
+  <% end %>
+</div>
