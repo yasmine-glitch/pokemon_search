@@ -1,14 +1,17 @@
-<div>
-  <h1>Pokemon search!</h1>
-  <p>tape le nom d'un pokémon dans la barre de recherche</p>
-  <%= form_tag @pokemon_path, method: :get do %>
-    <div class="search-form-control form-control">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search a Pokémon"
-      %>
-      <%= submit_tag "Search", class: "btn btn-flat" %>
-    </div>
-  <% end %>
+<div class="container">
+
+What Pokémon do you want to read about ?
+<br>
+<br>
+<br>
+<%= form_tag pokemons_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Write the name of a Pokémon"
+  %>
+<br>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 </div>

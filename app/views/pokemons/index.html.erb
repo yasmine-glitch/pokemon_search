@@ -1,0 +1,31 @@
+<div class="container">
+  <p>All you need to know about <strong><%= @pokemon ['name'] %></strong></p>
+  <br>
+
+  <div>
+    <ul>
+      <li><%= image_tag(@pokemon['sprites']['front_default']) %></li>
+      <li><strong> Name: </strong><%= @pokemon['name'].capitalize! %></li>
+      <li><strong> Height: </strong><%= @pokemon['height'] %></li>
+      <li><strong> Weight: </strong><%= @pokemon['weight'] %></li>
+      <li><strong> Abilities: </strong><%= @pokemon['abilities'][0]['ability']['name'] %>,<%= @pokemon['abilities'][1]['ability']['name'] %></li>
+      <li><strong> Best moves: </strong><%= @pokemon['moves'][0]['move']['name'].capitalize! %>,<%= @pokemon['moves'][1]['move']['name'].capitalize! %>,<%= @pokemon['moves'][2]['move']['name'].capitalize! %></li>
+      <li><strong> Held items: </strong><%= @pokemon['held_items'][0]['item']['name'].capitalize! %>,<%= @pokemon['held_items'][1]['item']['name'].capitalize! %></li>
+    </ul>
+  </div>
+
+<br>
+<br>
+<br>
+Find your Pokemon !
+
+  <%= form_tag pokemons_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a pokemon"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+</div>
