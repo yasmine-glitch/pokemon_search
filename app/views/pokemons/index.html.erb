@@ -28,14 +28,16 @@
 <br>
 <br>
 Find your Pokémon !
-
+<br>
+<br>
+<br>
   <%= form_tag pokemons_path, method: :get do %>
   <%= text_field_tag :query,
   params[:query],
   class: "form-control",
-  placeholder: "Find a pokemon"
+  placeholder: "Find your pokemon"
   %>
+<br>
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-
 </div>
